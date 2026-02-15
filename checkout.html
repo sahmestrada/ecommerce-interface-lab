@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout</title>
+</head>
+<body>
+
+<header>
+    <h1>Checkout & Shipping</h1>
+</header>
+
+<main>
+
+<section>
+    <form>
+
+        <fieldset>
+            <legend>Shipping Address</legend>
+
+            <label>Name:</label>
+            <input type="text" required><br><br>
+
+            <label>Street:</label>
+            <input type="text" required><br><br>
+
+            <label>Zip Code:</label>
+            <input type="text" required><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Payment Method</legend>
+
+            <label>
+                <input type="radio" name="payment" required>
+                Credit Card
+            </label><br>
+
+            <label>
+                <input type="radio" name="payment">
+                PayPal
+            </label>
+        </fieldset>
+
+        <br>
+        <input type="submit" value="Place Order">
+
+    </form>
+</section>
+
+<aside>
+    <h3>Order Summary</h3>
+    <p>Product 1 - $10</p>
+    <p>Total: $10</p>
+</aside>
+
+</main>
+
+</body>
+</html>
