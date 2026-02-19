@@ -1,0 +1,122 @@
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #e67e22;
+    --bg-light: #f4f4f4;
+    --text-main: #333333;
+    --white: #ffffff;
+    --border-color: #dddddd;
+    --valid-color: #27ae60;
+    --error-color: #e74c3c;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+    margin: 20px;
+}
+
+h1, h2, h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+nav a, a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+nav a:hover, a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+input[type="submit"], button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--accent-color);
+}
+
+input[type="submit"]:active {
+    transform: scale(0.98);
+    background-color: #d35400; 
+}
+
+input:focus, button:focus {
+    outline: 2px solid var(--accent-color);
+}
+
+article {
+    display: inline-block;
+    width: 250px;
+    vertical-align: top;
+    margin: 10px;
+    padding: 15px;
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+article:nth-child(even) {
+    background-color: #ebf2f9;
+}
+
+main:empty {
+    background: #ffeaa7;
+    padding: 20px;
+    border: 2px dashed #fdcb6e;
+}
+
+.price::before {
+    content: "$"; 
+    font-weight: bold;
+    margin-right: 2px;
+}
+
+input:required {
+    border: 2px solid #bdc3c7;
+}
+
+input:valid {
+    border-color: var(--valid-color);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table td:first-child {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+li::marker {
+    color: var(--accent-color);
+    font-size: 1.2em;
+}
+
+blockquote::before {
+    content: "“";
+    font-size: 2em;
+    color: var(--accent-color);
+    vertical-align: sub;
+}
+
+blockquote::after {
+    content: "”";
+    font-size: 2em;
+    color: var(--accent-color);
+    vertical-align: sub;
+}
