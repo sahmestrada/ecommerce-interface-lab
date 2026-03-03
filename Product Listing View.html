@@ -8,38 +8,37 @@
 
 <header>
     <h1>Product Listing</h1>
+    <nav>
+        <a href="account.html">Account</a>
+        <a href="cart.html">Cart</a>
+    </nav>
 </header>
 
-<main>
+<main class="product-listing-layout"> <aside>
+        <h2>Filter Products</h2>
+        <form>
+            <label><input type="checkbox"> shoes</label><br>
+            <label><input type="checkbox"> Clothing</label><br><br>
 
-<aside>
-    <h2>Filter Products</h2>
-    <form>
-        <label><input type="checkbox"> shoes</label><br>
-        <label><input type="checkbox"> Clothing</label><br><br>
+            <label><input type="radio" name="price"> Low to High</label><br>
+            <label><input type="radio" name="price"> High to Low</label>
+        </form>
+    </aside>
 
-        <label><input type="radio" name="price"> Low to High</label><br>
-        <label><input type="radio" name="price"> High to Low</label>
-    </form>
-</aside>
+    <section class="grid-container"> <article>
+            <h3>Product 1</h3>
+            <img src="shoes.jepg.jpg" alt="Product 1">
+            <p class="price">20</p> <a href="shoesdetail.html">View Details</a>
+        </article>
 
-<section>
+        <article>
+            <h3>Product 2</h3>
+            <img src="clothes.jpeg.jpg" alt="Product 2">
+            <p class="price">10</p>
+            <a href="clothesdetail.html">View Details</a>
+        </article>
 
-<article>
-    <h3>Product 1</h3>
-    <img src="shoes.jepg.jpg" alt="Product 1" width="100">
-    <p>Price: $20</p>
-    <a href="shoesdetail.html">View Details</a>
-</article>
-
-<article>
-    <h3>Product 2</h3>
-    <img src="clothes.jpeg.jpg" alt="Product 2" width="100">
-    <p>Price: $1o</p>
-    <a href="clothesdetail.html">View Details</a>
-</article>
-
-</section>
+        </section>
 
 </main>
 

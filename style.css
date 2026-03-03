@@ -1,3 +1,4 @@
+/*BASE STYLES & VARIABLES (Mobile First: 0px to 480px)*/
 :root {
     --primary-color: #2c3e50;
     --accent-color: #e67e22;
@@ -14,109 +15,138 @@ body {
     background-color: var(--bg-light);
     color: var(--text-main);
     line-height: 1.6;
-    margin: 20px;
+    margin: 0;
+    padding: 10px;
 }
 
-h1, h2, h3 {
-    font-family: Georgia, 'Times New Roman', serif;
-    color: var(--primary-color);
-    font-weight: bold;
+/* Task 5: Fluid Images & Responsive Media */
+img {
+    max-width: 100%; 
+    height: auto;    
+    display: block;
 }
 
-nav a, a {
-    text-decoration: none;
-    color: var(--primary-color);
-    transition: all 0.3s ease;
+.table-container {
+    overflow-x: auto; 
 }
 
-nav a:hover, a:hover {
-    color: var(--accent-color);
-    text-decoration: underline;
+/* Task 2: Header & Nav Flexbox (Mobile: Column) */
+header {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    padding: 20px;
+    background: var(--white);
+    margin-bottom: 20px;
 }
 
-input[type="submit"], button {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+/* Task 3, 4 & 6: Layout & Grid Containers */
+.product-listing-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 20px;                
+}
+
+/* Task 4: Cart Item Flexbox (Card Design) */
+ul { padding: 0; list-style: none; }
+li {
+    display: flex;
+    flex-direction: row;     
+    align-items: center;   
+    gap: 15px;
+    background: var(--white);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+/* Checkout Layout (Mobile: Stacked) */
+.checkout-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Task 7: Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+article {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    animation: fadeIn 0.8s ease-out forwards; /* */
 }
 
 input[type="submit"]:hover {
     background-color: var(--accent-color);
+    animation: pulse 0.5s infinite; /* */
 }
 
-input[type="submit"]:active {
-    transform: scale(0.98);
-    background-color: #d35400; 
+h1, h2, h3 { color: var(--primary-color); font-family: Georgia, serif; }
+.price::before { content: "$"; font-weight: bold; }
+input:valid { border-color: var(--valid-color); }
+input:required { border: 2px solid #bdc3c7; }
+
+/* TABLET BREAKPOINT (481px to 768px)  */
+@media (min-width: 481px) {
+    /* Task 3: 2-column grid */
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-input:focus, button:focus {
-    outline: 2px solid var(--accent-color);
-}
+/*DESKTOP BREAKPOINT (769px to 1280px)*/
+@media (min-width: 769px) {
+    /* Task 2: Horizontal Header */
+    header {
+        flex-direction: row;            
+        justify-content: space-between;  
+    }
 
-article {
-    display: inline-block;
-    width: 250px;
-    vertical-align: top;
-    margin: 10px;
-    padding: 15px;
-    background-color: var(--white);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-}
+    /* Task 3: 4-column grid */
+    .grid-container {
+        grid-template-columns: repeat(4, minmax(150px, 1fr)); 
+    }
 
-article:nth-child(even) {
-    background-color: #ebf2f9;
-}
+    /* Task 6: Sidebar (25% Width) */
+    .product-listing-layout {
+        grid-template-columns: 25% 1fr; 
+        align-items: start;
+    }
 
-main:empty {
-    background: #ffeaa7;
-    padding: 20px;
-    border: 2px dashed #fdcb6e;
-}
-
-.price::before {
-    content: "$"; 
-    font-weight: bold;
-    margin-right: 2px;
-}
-
-input:required {
-    border: 2px solid #bdc3c7;
-}
-
-input:valid {
-    border-color: var(--valid-color);
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-table td:first-child {
-    font-weight: bold;
-    color: var(--primary-color);
-}
-
-li::marker {
-    color: var(--accent-color);
-    font-size: 1.2em;
-}
-
-blockquote::before {
-    content: "“";
-    font-size: 2em;
-    color: var(--accent-color);
-    vertical-align: sub;
-}
-
-blockquote::after {
-    content: "”";
-    font-size: 2em;
-    color: var(--accent-color);
-    vertical-align: sub;
+    /* Task 4: Checkout Side-by-Side */
+    .checkout-container {
+        flex-direction: row; /* */
+        align-items: flex-start;
+    }
+    
+    .checkout-container section { flex: 2; }
+    .checkout-container aside { 
+        flex: 1; 
+        background: var(--white);
+        padding: 20px;
+        border-radius: 8px;
+    }
 }

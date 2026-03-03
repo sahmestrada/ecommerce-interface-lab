@@ -10,49 +10,42 @@
     <h1>Checkout & Shipping</h1>
 </header>
 
-<main>
+<main class="checkout-container"> 
 
-<section>
-    <form>
+    <section>
+        <form>
+            <fieldset>
+                <legend>Shipping Address</legend>
+                <label>Name:</label>
+                <input type="text" required><br><br>
 
-        <fieldset>
-            <legend>Shipping Address</legend>
+                <label>Street:</label>
+                <input type="text" required><br><br>
 
-            <label>Name:</label>
-            <input type="text" required><br><br>
+                <label>Zip Code:</label>
+                <input type="text" required><br><br>
+            </fieldset>
 
-            <label>Street:</label>
-            <input type="text" required><br><br>
+            <fieldset>
+                <legend>Payment Method</legend>
+                <label>
+                    <input type="radio" name="payment" required> Credit Card
+                </label><br>
+                <label>
+                    <input type="radio" name="payment"> PayPal
+                </label>
+            </fieldset>
 
-            <label>Zip Code:</label>
-            <input type="text" required><br><br>
-        </fieldset>
+            <br>
+            <input type="submit" value="Place Order">
+        </form>
+    </section>
 
-        <fieldset>
-            <legend>Payment Method</legend>
-
-            <label>
-                <input type="radio" name="payment" required>
-                Credit Card
-            </label><br>
-
-            <label>
-                <input type="radio" name="payment">
-                PayPal
-            </label>
-        </fieldset>
-
-        <br>
-        <input type="submit" value="Place Order">
-
-    </form>
-</section>
-
-<aside>
-    <h3>Order Summary</h3>
-    <p>Product 1 - $10</p>
-    <p>Total: $10</p>
-</aside>
+    <aside class="order-summary-card">
+        <h3>Order Summary</h3>
+        <p>Product 1 - $10</p>
+        <p><strong>Total: $10</strong></p>
+    </aside>
 
 </main>
 
